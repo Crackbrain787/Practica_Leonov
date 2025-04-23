@@ -1,0 +1,400 @@
+/* тоньше (400) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('../fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Regular.woff') format('woff'),
+        url('../fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* средний (500) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes-Medium.eot');
+    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
+        url('../fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Medium.woff') format('woff'),
+        url('../fonts/TTLakes-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* жирный (700) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('TTLakes-Bold.eot');
+    src: local('../fonts/TT Lakes Bold'), local('TTLakes-Bold'),
+        url('../fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Bold.woff') format('woff'),
+        url('../fonts/TTLakes-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*Основа стили*/
+body {
+    font-family: 'TT Lakes', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+    color: #1B1C21;
+}
+
+.services {
+    padding: 16px;
+}
+
+/* Шапка */
+.services__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16px;
+    position: relative;
+    gap: 16px;
+}
+/* Заголовок будет под иконками, с помощью ордер */
+.services__title {
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    padding-left: 12px;
+    flex-grow: 1;
+    order: 3; 
+    width: 100%;
+}
+
+.services__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #41F6D7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Кнопки */
+.services__header-buttons {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+    order: 2; /* Иконки справа */
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header-button__icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+.header-button__text {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #1B1C21;
+    white-space: nowrap;
+}
+
+/* Логотип и иконка меню */
+.services__logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    order: 1; /* Логотип слева */
+}
+
+.menu-icon {
+    order: 1; /* Иконка меню рядом с логотипом */
+    margin-right: 16px;
+}
+
+/* Иконки по умолчанию скрыты дя ПК версии*/
+.call-icon,
+.chat-icon,
+.profile-icon {
+    display: none;
+}
+
+/* Навигационное меню */
+.services__nav {
+    padding: 0 16px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.services__nav::-webkit-scrollbar {
+    display: none;
+}
+
+.services__nav-list {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    gap: 16px;
+}
+
+.services__nav-item {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.services__nav-link {
+    display: block;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #7E7E82;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.services__nav-link--active {
+    background-color: #FFFFFF;
+    border-color: #B8FFEC;
+}
+
+/* текст из параграфа */
+.services__content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.services__content {
+    margin-bottom: 16px;
+}
+
+.services__text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    margin: 0 0 16px 0;
+}
+
+.services__text--highlight {
+    font-weight: 500;
+}
+
+.services__read-more {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1B1C21;
+    font-weight: 500;
+}
+
+.services__read-more::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('img/expand.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;
+}
+
+/* фотка с лого цпс на стене */
+.services__photo {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+/* Мобилка (до 767px) */
+@media (max-width: 767px) {
+    .services__header {
+        padding: 16px;
+        border-bottom: 1px solid #D9FFF5;
+        gap: 8px;
+    }
+    
+    .services__logo {
+        height: 40px;
+        margin-right: auto;
+    }
+    
+    .services__title {
+        font-size: 20px;
+        line-height: 28px;
+        padding-left: 12px;
+        margin-top: 8px;
+    }
+    
+    .header-button__text {
+        display: none;
+    }
+    
+    .header-button__icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0;
+    }
+    
+    .call-icon {
+        display: block;
+    }
+    
+    .services__nav {
+        padding: 0 16px;
+        margin-bottom: 16px;
+    }
+    
+    .services__nav-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Планшик (768px - 1119px) */
+@media (min-width: 768px) and (max-width: 1119px) {
+    .services {
+        padding: 24px;
+    }
+    
+    .services__header {
+        padding: 16px 24px;
+        border-bottom: none;
+    }
+    
+    .services__logo {
+        height: 45px;
+    }
+    
+    .services__title {
+        font-size: 24px;
+        line-height: 32px;
+        padding-left: 12px;
+        margin-top: 12px;
+    }
+    
+    .header-button__text {
+        display: none;
+    }
+    
+    .header-button__icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .call-icon,
+    .chat-icon,
+    .profile-icon {
+        display: block;
+    }
+    
+    .services__nav {
+        padding: 0 24px;
+        margin-bottom: 24px;
+    }
+    
+    .services__content-wrapper {
+        flex-direction: row;
+        gap: 24px;
+        padding: 0 24px;
+    }
+    
+    .services__photo {
+        width: 360px;
+    }
+}
+
+/* Комп (от 1120px) */
+@media (min-width: 1120px) {
+    .services {
+        padding: 32px;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    
+    .services__header {
+        flex-wrap: nowrap;
+        padding: 16px 32px;
+        gap: 0;
+    }
+    
+    .services__title {
+        order: 1;
+        width: auto;
+        margin-top: 0;
+        padding-left: 32px;
+    }
+    
+    .services__logo {
+        display: none;
+    }
+    
+    .menu-icon {
+        display: none;
+    }
+    
+    .services__header-buttons {
+        order: 3;
+    }
+    
+    .header-button__text {
+        display: inline;
+        font-size: 16px;
+    }
+    
+    .call-icon,
+    .chat-icon,
+    .profile-icon {
+        display: none;
+    }
+    
+    .services__content-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 36px;
+        padding: 0 32px;
+    }
+    
+    .services__content {
+        flex: 1;
+        max-width: 50%;
+    }
+    
+    .services__photo {
+        max-width: 45%;
+        margin-top: 0;
+    }
+    
+    .services__nav {
+        padding: 0 32px;
+        margin-bottom: 8px;
+    }
+    
+    .services__nav-list {
+        flex-wrap: wrap;
+    }
+    
+    .services__nav-item:last-child {
+        flex-basis: 100%;
+        margin-top: 8px;
+    }
+}
