@@ -101,7 +101,34 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 8px;
-    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Иконки кнопок */
+.menu-icon .header-button__icon {
+    background-image: url('imgi/burger.svg');
+}
+
+.repair-button .header-button__icon {
+    background-image: url('imgi/repair.svg');
+}
+
+.status-button .header-button__icon {
+    background-image: url('imgi/checkstatus.svg');
+}
+
+.call-icon .header-button__icon {
+    background-image: url('imgi/call.svg');
+}
+
+.chat-icon .header-button__icon {
+    background-image: url('imgi/chat.svg');
+}
+
+.profile-icon .header-button__icon {
+    background-image: url('imgi/profile.svg');
 }
 
 .header-button__text {
@@ -125,7 +152,7 @@ body {
     margin-right: 16px;
 }
 
-/* Иконки по умолчанию скрыты дя ПК версии*/
+/* Иконки по умолчанию скрыты для ПК версии*/
 .call-icon,
 .chat-icon,
 .profile-icon {
@@ -198,7 +225,8 @@ body {
     font-weight: 500;
 }
 
-.services__read-more {
+/* Иконка и ссылка "Читать далее" */
+.read-more__link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -206,12 +234,11 @@ body {
     font-weight: 500;
 }
 
-.services__read-more::before {
-    content: '';
+.read-more__icon {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background-image: url('img/expand.png');
+    background-image: url('imgi/expand.svg');
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 8px;
@@ -249,13 +276,18 @@ body {
     }
     
     .header-button__icon {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         margin-right: 0;
     }
     
     .call-icon {
         display: block;
+    }
+    
+    .chat-icon,
+    .profile-icon {
+        display: none;
     }
     
     .services__nav {
@@ -269,7 +301,7 @@ body {
     }
 }
 
-/* Планшик (768px - 1119px) */
+/* Планшет (768px - 1119px) */
 @media (min-width: 768px) and (max-width: 1119px) {
     .services {
         padding: 24px;
@@ -278,17 +310,35 @@ body {
     .services__header {
         padding: 16px 24px;
         border-bottom: none;
+        flex-wrap: wrap; /* Изменено с nowrap */
+        gap: 8px; /* Добавлено */
     }
     
     .services__logo {
         height: 45px;
+        order: 1;
+        margin-right: auto; /* Добавлено */
+    }
+    
+    .menu-icon {
+        order: 1;
+        margin-right: 16px;
     }
     
     .services__title {
         font-size: 24px;
         line-height: 32px;
         padding-left: 12px;
-        margin-top: 12px;
+        margin-top: 0;
+        order: 3; /* Изменено с 2 */
+        width: 100%; /* Добавлено */
+        flex-grow: 1;
+        margin-top: 8px; /* Добавлено */
+    }
+    
+    .services__header-buttons {
+        order: 2; /* Изменено с 3 */
+        margin-left: auto;
     }
     
     .header-button__text {
@@ -296,14 +346,17 @@ body {
     }
     
     .header-button__icon {
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
     }
     
+    /* Отображаем ВСЕ иконки в планшетной версии */
     .call-icon,
     .chat-icon,
-    .profile-icon {
-        display: block;
+    .profile-icon,
+    .repair-button,
+    .status-button {
+        display: flex;
     }
     
     .services__nav {

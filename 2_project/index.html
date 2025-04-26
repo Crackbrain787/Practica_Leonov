@@ -3,50 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вёрстка по макету</title>
+    <title>Услуги и сервисы CPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="services">
         <div class="services__header">
-            <!-- Иконка меню (он же бургер) -->
-            <button class="header-button menu-icon" type="button">
-                <img src="imgi/burger.png" alt="Меню" class="header-button__icon">
+            <button class="header-button menu-icon" type="button" aria-label="Меню">
+                <span class="header-button__icon"></span>
             </button>
             
-            <!-- Логотип CPS (PNG) -->
-            <img src="imgi/Group.png" alt="CPS" class="services__logo">
+            <img src="imgi/Group.svg" alt="CPS" class="services__logo">
             
             <h1 class="services__title">Услуги и сервисы</h1>
             
             <div class="services__header-buttons">
-                <!-- Основные кнопки -->
                 <button class="header-button repair-button" type="button">
-                    <img src="imgi/repair.png" alt="Ремонт" class="header-button__icon">
+                    <span class="header-button__icon"></span>
                     <span class="header-button__text">Оставить заявку</span>
                 </button>
                 
                 <button class="header-button status-button" type="button">
-                    <img src="imgi/checkstatus.png" alt="Статус" class="header-button__icon">
+                    <span class="header-button__icon"></span>
                     <span class="header-button__text">Статус ремонта</span>
                 </button>
                 
-                <!-- Дополнительные иконки для планшика и мобилы -->
-                <button class="header-button call-icon" type="button">
-                    <img src="imgi/call.png" alt="Звонок" class="header-button__icon">
+                <button class="header-button call-icon" type="button" aria-label="Звонок">
+                    <span class="header-button__icon"></span>
                 </button>
                 
-                <button class="header-button chat-icon" type="button">
-                    <img src="imgi/chat.png" alt="Чат" class="header-button__icon">
+                <button class="header-button chat-icon" type="button" aria-label="Чат">
+                    <span class="header-button__icon"></span>
                 </button>
                 
-                <button class="header-button profile-icon" type="button">
-                    <img src="imgi/profile.png" alt="Профиль" class="header-button__icon">
+                <button class="header-button profile-icon" type="button" aria-label="Профиль">
+                    <span class="header-button__icon"></span>
                 </button>
             </div>
         </div>
         
-        <!-- Навигация в виде ссылок заглушек -->
         <nav class="services__nav">
             <ul class="services__nav-list">
                 <li class="services__nav-item">
@@ -79,15 +74,16 @@
                 <p class="services__text services__text--highlight">
                     Мы успешно работаем с 1992 года и заслужили репутацию надёжного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
                 </p>
+                
                 <div class="services__read-more">
-                    <a href="#" class="services__read-more">
-                        <img src="imgi/expand.png" alt="" class="read-more__icon">
+                    <a href="#" class="read-more__link">
+                        <span class="read-more__icon"></span>
                         <span class="read-more__text">Читать далее</span>
                     </a>
                 </div>
             </div>
             
-            <img src="imgi/ec28084f3de98850700667e14dbc02fd.png" alt="Сервисный центр" class="services__photo">
+            <img src="imgi/ec28084f3de98850700667e14dbc02fd.jpg" alt="Сервисный центр" class="services__photo">
         </div>
     </section>
 </body>
