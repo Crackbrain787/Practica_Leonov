@@ -1,0 +1,207 @@
+/* тоньше (400) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('../fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Regular.woff') format('woff'),
+        url('../fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* средний (500) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes-Medium.eot');
+    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
+        url('../fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Medium.woff') format('woff'),
+        url('../fonts/TTLakes-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* жирный (700) */
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('TTLakes-Bold.eot');
+    src: local('../fonts/TT Lakes Bold'), local('TTLakes-Bold'),
+        url('../fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes-Bold.woff') format('woff'),
+        url('../fonts/TTLakes-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'TT Lakes', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Боковое меню */
+.side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+/* Шапка */
+.side-menu__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 16px;
+}
+
+.side-menu__close-btn,
+.side-menu__search-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.side-menu__close-icon,
+.side-menu__search-icon {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.side-menu__close-icon:hover,
+.side-menu__search-icon:hover {
+    opacity: 0.7;
+}
+
+/* Логотип, чтобы был левее */
+.side-menu__logo {
+    margin-right: auto;
+}
+
+.side-menu__logo-icon {
+    height: 50px;
+}
+
+/* Навигация */
+.side-menu__nav {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 32px;
+}
+
+.side-menu__item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #1B1C21;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: -24px;
+    padding-left: 24px;
+}
+
+.side-menu__item:hover {
+    color: #7E7E82;
+}
+
+.side-menu__item:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #41F6D7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Подвал с контактами и языками */
+.side-menu__footer {
+    margin-top: auto;
+}
+
+.side-menu__contact-links {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.side-menu__contact-icon {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.side-menu__contact-icon:hover {
+    opacity: 0.7;
+}
+
+.side-menu__email,
+.side-menu__phone {
+    display: block;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.side-menu__email {
+    color: #1B1C21;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.side-menu__phone {
+    color: #1B1C21;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.side-menu__email:hover,
+.side-menu__phone:hover {
+    opacity: 0.7;
+}
+
+/* Языки */
+.side-menu__languages {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.side-menu__lang {
+    background: none;
+    border: none;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: #1B1C21;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.side-menu__lang:hover {
+    opacity: 0.7;
+}
+
+.side-menu__lang--active {
+    color: #7E7E82;
+}
